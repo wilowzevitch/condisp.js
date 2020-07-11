@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>condisp.js</title>
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<style type="text/css">
+		.bloc {
+			height: 150px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.blue { background-color: blue; }
+		.green { background-color: green; }
+		.red { background-color: red; }
+		.pink { background-color: pink; }
+	</style>
+
+</head>
+<body>
+	
+	<h1>Condisp.js</h1>
+	<hr />
+
+	<div class="container">
+		<div class="row mt-5 border p-3">
+			<div class="col-lg-6">
+				<h3>Select and toggle</h3>
+				<div class="form-group">
+					<select class="form-control condisp" data-group="select">
+						<option data-show="">Aucun</option>
+						<option data-show="blocp">Bloc principal</option>
+						<option data-show="blocs">Bloc secondaire</option>
+						<option data-show="blocp&blocs">Les deux</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-condisp" data-group="select" data-toggle="blocp&blocs">Toggle</button>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="bloc red" data-group="select" data-condisp="blocp" style="display: none;">Bloc principal</div>
+				<div class="bloc blue" data-group="select" data-condisp="blocs" style="display: none;">Bloc secondaire</div>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-sm-6 p-3 border">
+				<div class="form-group">
+					<h3>Radio buttons</h3>
+					<div>
+						<label>
+							<input class="condisp" type="radio" name="radio" value="1" data-group="radio"  data-show="" />
+							Aucun
+						</label>
+						<label>
+							<input class="condisp" type="radio" name="radio" value="1" data-group="radio"  data-show="block1" />
+							Block 1
+						</label>
+						<label>
+							<input class="condisp" type="radio" name="radio" value="2" data-group="radio"  data-show="block2" />
+							Block 2
+						</label>
+						<label>
+							<input class="condisp" type="radio" name="radio" value="3" data-group="radio"  data-show="block1&block2" checked="" />
+							Block 1 & 2
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 bloc green" data-group="radio" data-condisp="block1" style="display: none;">Block 1</div>
+					<div class="col-sm-6 bloc red" data-group="radio" data-condisp="block2" style="display: none;">Block 2</div>
+				</div>
+			</div>
+			<div class="col-sm-6 p-3 border">
+				<div>
+					<h3>Checkbox</h3>
+					<div class="form-group">
+						<label for="checkbox">Show</label>
+						<input type="checkbox" class="condisp" name="checkbox" data-group="checkbox" data-show="checked" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 bloc pink" data-group="checkbox" data-condisp="checked" style="display: none;">Block checked</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="condisp.js"></script>
+</body>
+</html>
