@@ -49,7 +49,6 @@ $(function(){
 		});
 
 		function displayParts (show, group) {
-			console.log(show, group);
 			var elements = show ? show.split('&') : [];
 			if (group != undefined) {
 				var list = $('[data-group='+group+'][data-condisp]').map(function(idx, elem) {
